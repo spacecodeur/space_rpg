@@ -1,0 +1,1 @@
+searchState.loadedDescShard("refcell", 0, "Interior Mutability Pattern (RefCell)\nA counter widget that uses interior mutability for shared …\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.\nDemonstrates the interior mutability pattern for mutable …")

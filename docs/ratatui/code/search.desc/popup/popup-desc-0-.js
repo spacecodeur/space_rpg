@@ -1,0 +1,1 @@
+searchState.loadedDescShard("popup", 0, "A Ratatui example that demonstrates how to handle popups. …\nCreate a centered rect using up certain percentage of the …")

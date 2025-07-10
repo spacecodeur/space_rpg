@@ -1,0 +1,1 @@
+searchState.loadedDescShard("immutable_consuming", 0, "Consuming Widget Pattern with Immutable State\nA simple counter widget that displays a count value.\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.\nDemonstrates the consuming widget pattern for immutable …\nCreate a new counter widget with the given count.")

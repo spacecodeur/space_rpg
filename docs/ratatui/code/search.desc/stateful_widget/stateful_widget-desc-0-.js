@@ -1,0 +1,1 @@
+searchState.loadedDescShard("stateful_widget", 0, "StatefulWidget Pattern (Recommended)\nA counter widget that uses the StatefulWidget pattern for …\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.\nDemonstrates the StatefulWidget pattern for mutable state …")

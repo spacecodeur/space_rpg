@@ -1,0 +1,1 @@
+searchState.loadedDescShard("color_explorer", 0, "A Ratatui example that demonstrates how to handle colors.")

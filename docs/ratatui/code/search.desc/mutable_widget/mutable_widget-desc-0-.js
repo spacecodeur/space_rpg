@@ -1,0 +1,1 @@
+searchState.loadedDescShard("mutable_widget", 0, "Mutable Widget Pattern\nA counter widget that maintains its own state and …\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.\nDemonstrates the mutable widget pattern for mutable state …")

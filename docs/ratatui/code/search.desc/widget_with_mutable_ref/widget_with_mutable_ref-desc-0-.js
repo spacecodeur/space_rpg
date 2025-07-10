@@ -1,0 +1,1 @@
+searchState.loadedDescShard("widget_with_mutable_ref", 0, "Lifetime-Based Mutable References Pattern\nA counter widget that holds a mutable reference to …\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.\nDemonstrates the lifetime-based mutable references pattern …")

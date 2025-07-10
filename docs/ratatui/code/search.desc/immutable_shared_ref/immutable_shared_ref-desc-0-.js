@@ -1,0 +1,1 @@
+searchState.loadedDescShard("immutable_shared_ref", 0, "Shared Reference Pattern with Immutable State\nA counter widget with immutable rendering behavior.\nReturns the argument unchanged.\nIncrement the counter value.\nCalls <code>U::from(self)</code>.\nDemonstrates the shared reference pattern for immutable …\nCreate a new counter.")

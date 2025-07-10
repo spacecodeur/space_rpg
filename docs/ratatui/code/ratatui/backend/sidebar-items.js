@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ClearType"],"struct":["CrosstermBackend","TermwizBackend","TestBackend","WindowSize"],"trait":["Backend","FromCrossterm","FromTermwiz","IntoCrossterm","IntoTermwiz"]};

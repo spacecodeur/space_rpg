@@ -1,0 +1,1 @@
+searchState.loadedDescShard("minimal", 0, "A minimal example of a Ratatui application.")

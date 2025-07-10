@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["LoadingState"],"fn":["main"],"struct":["App","PullRequest","PullRequestListState","PullRequestListWidget"],"type":["OctoPullRequest"]};

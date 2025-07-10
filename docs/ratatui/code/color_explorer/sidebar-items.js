@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["NAMED_COLORS"],"fn":["main","render","render_bg_named_colors","render_fg_named_colors","render_indexed_colors","render_indexed_grayscale","render_named_colors","title_block"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["render_calendar","render_gauge","render_horizontal_barchart","render_line_gauge","render_simple_barchart"],"struct":["WeatherTab"]};

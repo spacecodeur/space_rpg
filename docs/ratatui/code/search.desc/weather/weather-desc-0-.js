@@ -1,0 +1,1 @@
+searchState.loadedDescShard("weather", 0, "A Ratatui example that demonstrates how to render weather …\ncreate a yellow to red value based on the value (50-90)\nCreate a vertical bar chart from the temperatures data.")

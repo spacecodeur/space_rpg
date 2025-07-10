@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Lifetime-Based Mutable References Pattern"><title>widget_with_mutable_ref - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../static.files/rustdoc-1a91846b.css"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="widget_with_mutable_ref" data-themes="" data-resource-suffix="" data-rustdoc-version="1.88.0 (6b00bc388 2025-06-23)" data-channel="1.88.0" data-search-js="search-f7877310.js" data-settings-js="settings-5514c975.js" ><script src="../static.files/storage-4e99c027.js"></script><script defer src="../crates.js"></script><script defer src="../static.files/main-7ef8a74a.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-044be391.svg"></head><body class="rustdoc mod crate"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../widget_with_mutable_ref/index.html">widget_<wbr>with_<wbr>mutable_<wbr>ref</a><span class="version">0.0.0</span></h2></div><div class="sidebar-elems"><ul class="block"><li><a id="all-types" href="all.html">All Items</a></li></ul><section id="rustdoc-toc"><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#lifetime-based-mutable-references-pattern" title="Lifetime-Based Mutable References Pattern">Lifetime-Based Mutable References Pattern</a><ul><li><a href="#when-to-use-this-pattern" title="When to Use This Pattern">When to Use This Pattern</a></li><li><a href="#trade-offs" title="Trade-offs">Trade-offs</a></li><li><a href="#important-considerations" title="Important Considerations">Important Considerations</a></li><li><a href="#example-usage" title="Example Usage">Example Usage</a></li></ul></li></ul><h3><a href="#structs">Crate Items</a></h3><ul class="block"><li><a href="#structs" title="Structs">Structs</a></li><li><a href="#functions" title="Functions">Functions</a></li></ul></section><div id="rustdoc-modnav"></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1>Crate <span>widget_with_mutable_ref</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../src/widget_with_mutable_ref/widget-with-mutable-ref.rs.html#1-84">Source</a> </span></div><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><h2 id="lifetime-based-mutable-references-pattern"><a class="doc-anchor" href="#lifetime-based-mutable-references-pattern">§</a>Lifetime-Based Mutable References Pattern</h2>
+<p>This example demonstrates storing mutable references directly in widget structs using explicit
+lifetimes. This is an advanced pattern that provides zero-cost state access but requires
+careful lifetime management.</p>
+<p>This example runs with the Ratatui library code in the branch that you are currently
+reading. See the <a href="https://github.com/ratatui/ratatui/tree/latest"><code>latest</code></a> branch for the code which works with the most recent Ratatui
+release.</p>
+<h3 id="when-to-use-this-pattern"><a class="doc-anchor" href="#when-to-use-this-pattern">§</a>When to Use This Pattern</h3>
+<ul>
+<li>You need maximum performance with zero runtime overhead</li>
+<li>You have a good understanding of Rust lifetimes and borrowing</li>
+<li>State lifetime is clearly defined and relatively simple</li>
+<li>You’re building performance-critical applications</li>
+</ul>
+<h3 id="trade-offs"><a class="doc-anchor" href="#trade-offs">§</a>Trade-offs</h3>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Zero runtime cost - no reference counting or runtime borrow checking</li>
+<li>Compile-time safety - borrow checker ensures memory safety</li>
+<li>Direct access to state without indirection</li>
+<li>Maximum performance for state access</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Complex lifetime management - requires deep Rust knowledge</li>
+<li>Easy to create compilation errors that are hard to understand</li>
+<li>Inflexible - lifetime constraints can make code harder to refactor</li>
+<li>Not suitable for beginners - requires advanced Rust skills</li>
+<li>Widget structs become less reusable due to lifetime constraints</li>
+</ul>
+<h3 id="important-considerations"><a class="doc-anchor" href="#important-considerations">§</a>Important Considerations</h3>
+<ul>
+<li>The widget’s lifetime is tied to the state’s lifetime</li>
+<li>You must ensure the state outlives the widget</li>
+<li>Lifetime annotations can become complex in larger applications</li>
+<li>Consider simpler patterns unless performance is critical</li>
+</ul>
+<h3 id="example-usage"><a class="doc-anchor" href="#example-usage">§</a>Example Usage</h3>
+<p>The widget stores a mutable reference to external state, allowing direct access without
+runtime overhead. The widget must be recreated for each render call due to the lifetime
+constraints.</p>
+</div></details><h2 id="structs" class="section-header">Structs<a href="#structs" class="anchor">§</a></h2><dl class="item-table"><dt><a class="struct" href="struct.CounterWidget.html" title="struct widget_with_mutable_ref::CounterWidget">Counter<wbr>Widget</a><span title="Restricted Visibility">&nbsp;🔒</span> </dt><dd>A counter widget that holds a mutable reference to external state.</dd></dl><h2 id="functions" class="section-header">Functions<a href="#functions" class="anchor">§</a></h2><dl class="item-table"><dt><a class="fn" href="fn.main.html" title="fn widget_with_mutable_ref::main">main</a><span title="Restricted Visibility">&nbsp;🔒</span> </dt><dd>Demonstrates the lifetime-based mutable references pattern for mutable state management.</dd></dl></section></div></main></body></html>

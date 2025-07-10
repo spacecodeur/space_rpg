@@ -1,0 +1,1 @@
+searchState.loadedDescShard("ratatui_state_examples", 0, "Helper functions for checking if exit keys are pressed")

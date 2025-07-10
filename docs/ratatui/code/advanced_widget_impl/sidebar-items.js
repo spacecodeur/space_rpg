@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["fill","main"],"struct":["App","BlueSquare","BoxedSquares","Greeting","RedSquare","RightAlignedSquare","Timer"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["TermwizBackend"],"trait":["FromTermwiz","IntoTermwiz"]};

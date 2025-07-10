@@ -1,0 +1,1 @@
+searchState.loadedDescShard("immutable_function", 0, "Function-Based Pattern with Immutable State\nState for the counter.\nReturns the argument unchanged.\nIncrement the counter value.\nCalls <code>U::from(self)</code>.\nDemonstrates the function-based pattern for immutable …\nPure render function that displays the counter state.")

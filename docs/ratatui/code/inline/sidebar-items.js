@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["NUM_DOWNLOADS"],"enum":["Event"],"fn":["downloads","input_handling","main","render","run","workers"],"struct":["Download","DownloadInProgress","Downloads","Worker"],"type":["DownloadId","WorkerId"]};

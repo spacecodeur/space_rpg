@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["main","render","temperature_style","vertical_bar","vertical_barchart"]};

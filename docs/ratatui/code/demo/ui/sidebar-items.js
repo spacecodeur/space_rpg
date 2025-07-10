@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["draw_charts","draw_first_tab","draw_gauges","draw_second_tab","draw_text","draw_third_tab","render"]};

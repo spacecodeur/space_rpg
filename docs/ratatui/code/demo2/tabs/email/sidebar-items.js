@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["EMAILS"],"fn":["render_email","render_inbox"],"struct":["Email","EmailTab"]};

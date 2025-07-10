@@ -1,0 +1,1 @@
+searchState.loadedDescShard("component_trait", 0, "Custom Component Trait Pattern\nA custom trait for components that can render themselves …\nA simple counter component that increments its value each …\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.\nDemonstrates the custom component trait pattern for …\nRender the component to the given area of the frame.")

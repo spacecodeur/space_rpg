@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["EXAMPLE_HEIGHT","FILL_COLOR","ILLUSTRATION_HEIGHT","LENGTH_COLOR","MAX_COLOR","MIN_COLOR","PERCENTAGE_COLOR","RATIO_COLOR","SPACER_HEIGHT"],"enum":["AppState","SelectedTab"],"fn":["main"],"struct":["App","Example","SelectedTabIter"]};

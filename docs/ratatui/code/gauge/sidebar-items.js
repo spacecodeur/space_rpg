@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["CUSTOM_LABEL_COLOR","GAUGE1_COLOR","GAUGE2_COLOR","GAUGE3_COLOR","GAUGE4_COLOR"],"enum":["AppState"],"fn":["main","render_footer","render_header","title_block"],"struct":["App"]};

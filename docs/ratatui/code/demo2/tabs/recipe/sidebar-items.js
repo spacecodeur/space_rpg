@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["INGREDIENTS","RECIPE"],"fn":["render_ingredients","render_recipe","render_scrollbar"],"struct":["Ingredient","RecipeTab"]};

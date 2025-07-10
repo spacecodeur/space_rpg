@@ -1,0 +1,1 @@
+searchState.loadedDescShard("tracing", 0, "Handle events and insert them into the events vector …\nInitialize the tracing subscriber to log to a file")

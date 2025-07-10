@@ -1,0 +1,1 @@
+searchState.loadedDescShard("hyperlink", 0, "A hyperlink widget that renders a hyperlink in the …\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.")

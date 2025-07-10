@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Shared Reference Pattern with Immutable State"><title>immutable_shared_ref - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../static.files/rustdoc-1a91846b.css"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="immutable_shared_ref" data-themes="" data-resource-suffix="" data-rustdoc-version="1.88.0 (6b00bc388 2025-06-23)" data-channel="1.88.0" data-search-js="search-f7877310.js" data-settings-js="settings-5514c975.js" ><script src="../static.files/storage-4e99c027.js"></script><script defer src="../crates.js"></script><script defer src="../static.files/main-7ef8a74a.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-044be391.svg"></head><body class="rustdoc mod crate"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../immutable_shared_ref/index.html">immutable_<wbr>shared_<wbr>ref</a><span class="version">0.0.0</span></h2></div><div class="sidebar-elems"><ul class="block"><li><a id="all-types" href="all.html">All Items</a></li></ul><section id="rustdoc-toc"><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#shared-reference-pattern-with-immutable-state" title="Shared Reference Pattern with Immutable State">Shared Reference Pattern with Immutable State</a><ul><li><a href="#when-to-use-this-pattern" title="When to Use This Pattern">When to Use This Pattern</a></li><li><a href="#trade-offs" title="Trade-offs">Trade-offs</a></li><li><a href="#example-usage" title="Example Usage">Example Usage</a></li></ul></li></ul><h3><a href="#structs">Crate Items</a></h3><ul class="block"><li><a href="#structs" title="Structs">Structs</a></li><li><a href="#functions" title="Functions">Functions</a></li></ul></section><div id="rustdoc-modnav"></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1>Crate <span>immutable_shared_ref</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../src/immutable_shared_ref/immutable-shared-ref.rs.html#1-92">Source</a> </span></div><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><h2 id="shared-reference-pattern-with-immutable-state"><a class="doc-anchor" href="#shared-reference-pattern-with-immutable-state">§</a>Shared Reference Pattern with Immutable State</h2>
+<p>This example demonstrates implementing the <code>Widget</code> trait on a shared reference (<code>&amp;Widget</code>)
+with immutable state. This is the recommended pattern for most widgets in modern Ratatui
+applications, as it allows widgets to be reused without being consumed.</p>
+<p>This example runs with the Ratatui library code in the branch that you are currently
+reading. See the <a href="https://github.com/ratatui/ratatui/tree/latest"><code>latest</code></a> branch for the code which works with the most recent Ratatui
+release.</p>
+<h3 id="when-to-use-this-pattern"><a class="doc-anchor" href="#when-to-use-this-pattern">§</a>When to Use This Pattern</h3>
+<ul>
+<li>You want to reuse widgets across multiple renders</li>
+<li>Your widget doesn’t need to modify its state during rendering</li>
+<li>You want the benefits of Ratatui’s widget ecosystem</li>
+<li>You’re building modern, efficient Ratatui applications</li>
+</ul>
+<h3 id="trade-offs"><a class="doc-anchor" href="#trade-offs">§</a>Trade-offs</h3>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Reusable - widget can be rendered multiple times without reconstruction</li>
+<li>Efficient - no cloning or reconstruction needed</li>
+<li>Standard - integrates with Ratatui’s widget ecosystem</li>
+<li>Modern - follows current Ratatui best practices</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Immutable - cannot modify widget state during rendering</li>
+<li>External state - requires external state management for dynamic behavior</li>
+</ul>
+<h3 id="example-usage"><a class="doc-anchor" href="#example-usage">§</a>Example Usage</h3>
+<p>The widget implements <code>Widget for &amp;Counter</code>, allowing it to be rendered by reference
+while keeping its internal data immutable during rendering.</p>
+</div></details><h2 id="structs" class="section-header">Structs<a href="#structs" class="anchor">§</a></h2><dl class="item-table"><dt><a class="struct" href="struct.Counter.html" title="struct immutable_shared_ref::Counter">Counter</a><span title="Restricted Visibility">&nbsp;🔒</span> </dt><dd>A counter widget with immutable rendering behavior.</dd></dl><h2 id="functions" class="section-header">Functions<a href="#functions" class="anchor">§</a></h2><dl class="item-table"><dt><a class="fn" href="fn.main.html" title="fn immutable_shared_ref::main">main</a><span title="Restricted Visibility">&nbsp;🔒</span> </dt><dd>Demonstrates the shared reference pattern for immutable widget rendering.</dd></dl></section></div></main></body></html>

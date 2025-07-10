@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["ALT_ROW_BG_COLOR","COMPLETED_TEXT_FG_COLOR","NORMAL_ROW_BG","SELECTED_STYLE","TEXT_FG_COLOR","TODO_HEADER_STYLE"],"enum":["Status"],"fn":["alternate_colors","main"],"struct":["App","TodoItem","TodoList"]};

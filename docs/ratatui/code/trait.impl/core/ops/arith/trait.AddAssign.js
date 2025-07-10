@@ -1,0 +1,9 @@
+(function() {
+    var implementors = Object.fromEntries([["ratatui_core",[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.88.0/core/ops/arith/trait.AddAssign.html\" title=\"trait core::ops::arith::AddAssign\">AddAssign</a> for <a class=\"struct\" href=\"ratatui_core/text/struct.Text.html\" title=\"struct ratatui_core::text::Text\">Text</a>&lt;'_&gt;"],["impl&lt;'a&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/1.88.0/core/ops/arith/trait.AddAssign.html\" title=\"trait core::ops::arith::AddAssign\">AddAssign</a>&lt;<a class=\"struct\" href=\"ratatui_core/text/struct.Line.html\" title=\"struct ratatui_core::text::Line\">Line</a>&lt;'a&gt;&gt; for <a class=\"struct\" href=\"ratatui_core/text/struct.Text.html\" title=\"struct ratatui_core::text::Text\">Text</a>&lt;'a&gt;"],["impl&lt;'a&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/1.88.0/core/ops/arith/trait.AddAssign.html\" title=\"trait core::ops::arith::AddAssign\">AddAssign</a>&lt;<a class=\"struct\" href=\"ratatui_core/text/struct.Span.html\" title=\"struct ratatui_core::text::Span\">Span</a>&lt;'a&gt;&gt; for <a class=\"struct\" href=\"ratatui_core/text/struct.Line.html\" title=\"struct ratatui_core::text::Line\">Line</a>&lt;'a&gt;"]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[1181]}

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["INFO_TEXT","ITEM_HEIGHT","PALETTES"],"fn":["constraint_len_calculator","generate_fake_names","main"],"struct":["App","Data","TableColors"]};

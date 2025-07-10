@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["HEAVY_PAYLOAD_DATA","MEDIUM_PAYLOAD_DATA","SMALL_PAYLOAD_DATA"],"fn":["main","render_barchart","render_line_chart","render_scatter"],"struct":["App","SinSignal"]};

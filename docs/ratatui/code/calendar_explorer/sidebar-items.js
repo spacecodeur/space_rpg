@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["StyledCalendar"],"fn":["events","main","next_month","prev_month","render","run"]};

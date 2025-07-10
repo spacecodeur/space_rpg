@@ -1,0 +1,1 @@
+searchState.loadedDescShard("custom_widget", 0, "A custom widget that renders a button with a label, theme …\nReturns the argument unchanged.\nReturns the argument unchanged.\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.\nCalls <code>U::from(self)</code>.\nCalls <code>U::from(self)</code>.")

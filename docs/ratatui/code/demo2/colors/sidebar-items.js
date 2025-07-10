@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["color_from_oklab"],"struct":["RgbSwatch"]};

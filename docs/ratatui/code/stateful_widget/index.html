@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="StatefulWidget Pattern (Recommended)"><title>stateful_widget - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../static.files/rustdoc-1a91846b.css"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="stateful_widget" data-themes="" data-resource-suffix="" data-rustdoc-version="1.88.0 (6b00bc388 2025-06-23)" data-channel="1.88.0" data-search-js="search-f7877310.js" data-settings-js="settings-5514c975.js" ><script src="../static.files/storage-4e99c027.js"></script><script defer src="../crates.js"></script><script defer src="../static.files/main-7ef8a74a.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-044be391.svg"></head><body class="rustdoc mod crate"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../stateful_widget/index.html">stateful_<wbr>widget</a><span class="version">0.0.0</span></h2></div><div class="sidebar-elems"><ul class="block"><li><a id="all-types" href="all.html">All Items</a></li></ul><section id="rustdoc-toc"><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#statefulwidget-pattern-recommended" title="StatefulWidget Pattern (Recommended)">StatefulWidget Pattern (Recommended)</a><ul><li><a href="#when-to-use-this-pattern" title="When to Use This Pattern">When to Use This Pattern</a></li><li><a href="#trade-offs" title="Trade-offs">Trade-offs</a></li><li><a href="#example-usage" title="Example Usage">Example Usage</a></li></ul></li></ul><h3><a href="#structs">Crate Items</a></h3><ul class="block"><li><a href="#structs" title="Structs">Structs</a></li><li><a href="#functions" title="Functions">Functions</a></li></ul></section><div id="rustdoc-modnav"></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1>Crate <span>stateful_widget</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../src/stateful_widget/stateful-widget.rs.html#1-78">Source</a> </span></div><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><h2 id="statefulwidget-pattern-recommended"><a class="doc-anchor" href="#statefulwidget-pattern-recommended">§</a>StatefulWidget Pattern (Recommended)</h2>
+<p>This example demonstrates the <code>StatefulWidget</code> trait, which is the recommended approach for
+handling mutable state in Ratatui applications. This pattern separates the widget’s rendering
+logic from its state, making it more flexible and reusable.</p>
+<p>This example runs with the Ratatui library code in the branch that you are currently
+reading. See the <a href="https://github.com/ratatui/ratatui/tree/latest"><code>latest</code></a> branch for the code which works with the most recent Ratatui
+release.</p>
+<h3 id="when-to-use-this-pattern"><a class="doc-anchor" href="#when-to-use-this-pattern">§</a>When to Use This Pattern</h3>
+<ul>
+<li>Most Ratatui applications (this is the recommended default)</li>
+<li>When building reusable widget libraries</li>
+<li>When you need clean separation between rendering logic and state</li>
+<li>When multiple widgets might share similar state structures</li>
+<li>When you want to follow idiomatic Ratatui patterns</li>
+</ul>
+<h3 id="trade-offs"><a class="doc-anchor" href="#trade-offs">§</a>Trade-offs</h3>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Clean separation of concerns between widget and state</li>
+<li>Reusable - the same widget can work with different state instances</li>
+<li>Testable - state and rendering logic can be tested independently</li>
+<li>Composable - works well with complex application architectures</li>
+<li>Idiomatic - follows Ratatui’s recommended patterns</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Slightly more verbose than direct mutation patterns</li>
+<li>Requires understanding of the <code>StatefulWidget</code> trait</li>
+<li>State must be managed externally</li>
+</ul>
+<h3 id="example-usage"><a class="doc-anchor" href="#example-usage">§</a>Example Usage</h3>
+<p>The widget defines its rendering behavior through <code>StatefulWidget</code>, while the state is
+managed separately. This allows the same widget to be used with different state instances
+and makes testing easier.</p>
+</div></details><h2 id="structs" class="section-header">Structs<a href="#structs" class="anchor">§</a></h2><dl class="item-table"><dt><a class="struct" href="struct.CounterWidget.html" title="struct stateful_widget::CounterWidget">Counter<wbr>Widget</a><span title="Restricted Visibility">&nbsp;🔒</span> </dt><dd>A counter widget that uses the StatefulWidget pattern for state management.</dd></dl><h2 id="functions" class="section-header">Functions<a href="#functions" class="anchor">§</a></h2><dl class="item-table"><dt><a class="fn" href="fn.main.html" title="fn stateful_widget::main">main</a><span title="Restricted Visibility">&nbsp;🔒</span> </dt><dd>Demonstrates the StatefulWidget pattern for mutable state management.</dd></dl></section></div></main></body></html>

@@ -1,0 +1,1 @@
+searchState.loadedDescShard("calendar_explorer", 0, "A Ratatui example that demonstrates how to render calendar …\nMakes a list of dates for the current year.\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.\nRender the UI with a calendar.\nRun the application.")

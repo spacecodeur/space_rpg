@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["DELAY","DRIP_SPEED","TEXT_DELAY"],"fn":["blend","centered_rect","destroy","drip","text"]};

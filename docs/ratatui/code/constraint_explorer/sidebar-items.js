@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["AppMode","ConstraintName"],"fn":["main"],"struct":["App","ConstraintBlock","ConstraintNameIter","SpacerBlock"]};

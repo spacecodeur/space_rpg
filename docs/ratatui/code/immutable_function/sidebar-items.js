@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["main","render_counter"],"struct":["Counter"]};

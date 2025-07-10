@@ -1,0 +1,1 @@
+searchState.loadedDescShard("widget_ref_container", 0, "An example of how to use <code>WidgetRef</code> to store heterogeneous …\nReturns the argument unchanged.\nReturns the argument unchanged.\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.\nCalls <code>U::from(self)</code>.\nCalls <code>U::from(self)</code>.")

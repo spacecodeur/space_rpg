@@ -1,0 +1,1 @@
+searchState.loadedDescShard("hello_world", 0, "This is a bare minimum example. There are many approaches …\nRender the application. This is where you would draw the …\nRun the application loop. This is where you would handle …\nCheck if the user has pressed ‘q’. This is where you …")

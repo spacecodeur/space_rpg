@@ -1,0 +1,1 @@
+searchState.loadedDescShard("mouse_drawing", 0, "Draw a line between the last point and the given position\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.\nQuit the app if the user presses ‘q’ or ‘Esc’\nAdds any points which were clicked or dragged to the <code>points</code>…")
