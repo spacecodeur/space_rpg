@@ -18,7 +18,6 @@ pub struct App {
     frame_rate: f64,
     components: Vec<Box<dyn Component>>,
     should_quit: bool,
-    should_suspend: bool,
     mode: Mode,
     last_tick_key_events: Vec<KeyEvent>,
     action_tx: mpsc::UnboundedSender<Action>,
@@ -39,7 +38,6 @@ impl App {
             frame_rate,
             components: vec![Box::new(Home::new())],
             should_quit: false,
-            should_suspend: false,
             config: Config::new()?,
             mode: Mode::Home,
             last_tick_key_events: Vec::new(),
@@ -65,17 +63,10 @@ impl App {
             component.init(tui.size()?)?;
         }
 
-        let action_tx = self.action_tx.clone();
         loop {
             self.handle_events(&mut tui).await?;
             self.handle_actions(&mut tui)?;
-            if self.should_suspend {
-                tui.suspend()?;
-                action_tx.send(Action::Resume)?;
-                action_tx.send(Action::ClearScreen)?;
-                // tui.mouse(true);
-                tui.enter()?;
-            } else if self.should_quit {
+            if self.should_quit {
                 tui.stop()?;
                 break;
             }
@@ -140,8 +131,6 @@ impl App {
                     self.last_tick_key_events.drain(..);
                 }
                 Action::Quit => self.should_quit = true,
-                Action::Suspend => self.should_suspend = true,
-                Action::Resume => self.should_suspend = false,
                 Action::ClearScreen => tui.terminal.clear()?,
                 Action::Resize(w, h) => self.handle_resize(tui, w, h)?,
                 Action::Render => self.render(tui)?,

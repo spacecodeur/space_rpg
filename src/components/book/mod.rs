@@ -107,9 +107,18 @@ impl Component for Book {
             ("".to_string(), "".to_string())
         };
 
+        // Calculate page numbers (each pagination page contains left and right content)
+        let current_page = if let Some(paginator) = &self.paginator {
+            paginator.current_page()
+        } else {
+            0
+        };
+        let left_page_number = current_page * 2 + 1;
+        let right_page_number = current_page * 2 + 2;
+
         // Render the left page of the book
         let left_page = Block::default()
-            .title_bottom("Left Page")
+            .title_bottom(format!("Page {}", left_page_number))
             .title_alignment(Alignment::Left)
             .borders(Borders::ALL)
             .border_style(Style::default().fg(Color::White));
@@ -120,7 +129,7 @@ impl Component for Book {
 
         // Render the right page of the book
         let right_page = Block::default()
-            .title_bottom("Right Page")
+            .title_bottom(format!("Page {}", right_page_number))
             .title_alignment(Alignment::Right)
             .borders(Borders::ALL)
             .border_style(Style::default().fg(Color::White));
